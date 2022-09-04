@@ -51,7 +51,7 @@ function sumarNumero() {
 }
 
 let conteo = 0
-let cantidadCalculos = parseInt(prompt("Cuantas cuentas tener que sacar ?"))
+let cantidadCalculos = parseInt(prompt("Cuantas cuentas tenes que sacar ?"))
 
 for (conteo = 0; conteo < cantidadCalculos ; conteo++){
     sumarNumero()
