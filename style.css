@@ -1,0 +1,20 @@
+*,
+::before,
+::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    width: 35%;
+    margin: 10px auto;
+    padding: 15px;
+    box-shadow: 10px 8px 10px ;
+    border-radius: 10px;
+}
+
+.card:hover {
+    box-shadow: 8px 10px 20px ;
+}
+
