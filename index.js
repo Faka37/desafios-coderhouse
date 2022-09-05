@@ -39,24 +39,19 @@ const calculador = () => {
 }
 
 function sumarNumero() {
-    let otroCalculo = false
     
-    otroCalculo = confirm("Si quieres hacer un calculo")
     
-    if (otroCalculo === true) {
+    otroCalculo = confirm("¿Queres calcular un producto?")
+    
+    while (otroCalculo === true) {
         calculador()
         saltoLinea()
+        otroCalculo = confirm("¿Queres calcular otro producto?")
     }
 
 }
 
-let conteo = 0
-let cantidadCalculos = parseInt(prompt("Cuantas cuentas tenes que sacar ?"))
-
-for (conteo = 0; conteo < cantidadCalculos ; conteo++){
-    sumarNumero()
-}
-
+sumarNumero()
 
 
 document.write("Tus valores finales: " + listaPosible.join(" - "))
