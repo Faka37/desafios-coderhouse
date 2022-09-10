@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumando array</title>
+    <title>Interactuando con html</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script defer src="./bootstrap/jquery/jquery.min.js"></script>
+    <script defer src="./bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./style.css">
-<body>
+    <script defer src="./js/sales.js"></script>
 
-    <div class =" card">
-        <h2>Calculador de descuento y cuotas</h2>
-        <p>Con un solo pago hay un 10% de descuento</p>
-        <p>Pagando en cuotas hay un 5% de interes en el monto</p>
-        <div class="valor">
-            <label for=""> Coloque el valor del producto:
-                <input type="text" name="" id="">
-            </label>
-        </div>
-        <div class = "cuotas">
-            <label for="">Cantidad de cuotas 
-                <select  class="cuotas_opciones" name="" id="">
-                    <option value="">1</option>
-                    <option value="">3</option>
-                    <option value="">6</option>
-                    <option value="">9</option>
-                    <option value="">12</option>
-                    <option value="">18</option>
-                </select>
-            </label>
-        </div>
-        <button aria-busy="true">Please wait…</button>
+
+</head>
+
+<body>
+    <h2 class="text-center">XIAOMI</h2>
+    <h3 class="text-center">EN STOCK || ENTREGA INMEDIATA</h3>
+    <div class="container d-flex justify-content-around">
+        <input class=" w-50 p-2" id="filter" type="text" placeholder="Busca tu nuevo celular!!!">
     </div>
 
-    <script src="./index.js"></script>
+    <div class="card-columns container mt-5" id="container">
+        
+
+    </div> 
+    
 </body>
+
 </html>
