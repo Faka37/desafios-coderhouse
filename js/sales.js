@@ -1,7 +1,10 @@
 // LLAMADAS AL HTML
-const container = document.querySelector("#container")
-const higher = document.querySelector("#higherPrice")
+const search = document.querySelector("#search")
+const filter = document.querySelector("#filter")
 const lower = document.querySelector("#lowerPrice")
+const higher = document.querySelector("#higherPrice")
+const addingNewProducts = document.querySelector("#addingProducts")
+const container = document.querySelector("#container")
 
 // VARIABLES NECESARIAS 
 
@@ -44,6 +47,7 @@ function list() {
 }
 
 
+
 // AGREGADO DE PRODUCTOS
 const addingProducts = () => {
     let brand = prompt("ingrese una marca").toUpperCase()
@@ -57,12 +61,11 @@ const addingProducts = () => {
     products.push(newProduct)
 
 }
-
-
+//BOTON
+addingNewProducts.addEventListener("click", () => { addingProducts()} ) 
 
 // CARGANDO PRODUCTOS
 const loadProducts = (products) =>{
-    list()
     for (const product of products){
         
         let div = document.createElement ("div")
@@ -78,30 +81,31 @@ const loadProducts = (products) =>{
                     container.appendChild(div)
     }
     
+    
 }
-
+list()
+loadProducts(products)
 
 
 
 //PARA EMPEZAR Y LLEGADO AL CASO SEGUIR AGREGANDO PRODUCTOS
 function runProducts () {
 
+    let loadProduct = confirm("¿Quiere cargar un nuevo producto?")
+    
+        if (loadProduct !== true){
+            loadProducts(products)
+            
+        }
+    
+    while (loadProduct === true) {
+        addingProducts()
+        loadProducts(products)
+        loadProduct = confirm("¿Quiere cargar otro producto?")
+    }
     
 }
-let loadProduct = confirm("¿Quiere cargar un nuevo producto?")
 
-    if (loadProduct !== true){
-        loadProducts(products)
-        
-    }
-
-while (loadProduct === true) {
-    addingProducts()
-    loadProducts(products)
-    loadProduct = confirm("¿Quiere cargar otro producto?")
-}
-
-runProducts() 
 
 
 //PARA ORDENAR LOS PRECIOS
@@ -117,8 +121,9 @@ function lowerPrice() {
     })
     
 } 
-
+//BOTON
 lower.addEventListener("click", () => { lowerPrice()} ) 
+
 
 function higherPrice() {
     products.sort((a, b) => {
@@ -131,21 +136,27 @@ function higherPrice() {
         return 0
     })
 }
+//BOTON
+higher.addEventListener("click", () => { higherPrice()} ) 
 
-//Busqueda en detalle 
-function filtrar() {
-    let parametro = prompt("Ingrese el nombre especifico de lo que busca: ").toUpperCase()
-    let resultado = productos.filter((producto) => producto.nombre.includes(parametro))
-    console.table(resultado)
+
+//BUSQUEDA EN DETALLE
+function filtering() {
+    let parameter = prompt("Ingrese el nombre especifico de lo que busca: ").toUpperCase()
+    let result = products.filter((product) => product.name.includes(parameter))
+    console.table(result)
 }
 
-// Mas de un resultado 
-function busqueda() {
-    let nomProd = prompt("Ingrese el nombre de lo que busca: ").toUpperCase()
-    let resultado = productos.find((producto) => producto.nombre.includes(nomProd))
-    if (resultado !== undefined) {
-        console.table(resultado)
+
+//MAS DE UN RESULTADO
+function searching() {
+    let nameProd = filter.value.toUpperCase()
+    let result = products.find((product) => product.name.includes(nameProd))
+    if (result !== undefined) {
+        console.table(result)
     } else {
         console.warn("No se encontró el producto buscado.")
     }
 }
+//BOTON
+search.addEventListener("click", () => { searching()} ) 
