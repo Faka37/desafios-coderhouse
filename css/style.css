@@ -4,17 +4,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body{
-    background-color: #b0c4dead;
+    background-image: linear-gradient(to bottom, #b0ebef, #b2e1eb, #b4d7e4, #b7cdda, #b8c4cf, #bbc2cf, #bec0cd, #c2becb, #d2c0cf, #e3c2cc, #f1c6c4, #f7ccb9,#b0ebefe7);
+    width: 100%;
+    height: 100vh;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .card {
-    margin: 10px auto;
     padding: 15px;
     box-shadow: 10px 8px 10px ;
-    border-radius: 10px;  
+    border-radius: 10px;
 }
 
 li {
@@ -22,15 +29,9 @@ li {
     
 }
 
-.card:hover {
-    box-shadow: 8px 10px 20px ;
-}
-
 .image {
     width: 250px;
-    margin: 0;
-    object-fit: cover
-    
+    margin: auto;
 }
 
 .price{
@@ -41,5 +42,4 @@ li {
     width: 100%;
     padding: 5px;
     border: 1px solid #b0c4dead;
-    box-shadow: inset 2px 2.5px 10px #4996fa;
 }

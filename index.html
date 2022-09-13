@@ -16,28 +16,47 @@
 
 </head>
 
+<header class="header text-center">
+    <h2 class="">XIAOMI || IPHONE</h2>
+    <h3 class="">EN STOCK || ENTREGA INMEDIATA</h3>
+</header>
+
 <body>
-    <section>
-        <h2 class="text-center">XIAOMI</h2>
-        <h3 class="text-center">EN STOCK || ENTREGA INMEDIATA</h3>
+    <section class="justify-content-center">
+        <div class="text-center">
+            <div>
+                <label for="higherPrice">
+                    <input type="radio" id="higherPrice" value="option1" name="price">
+                    Mayor precio
+                </label>
+            </div>
+            <div>
+                <label for="lowerPrice">
+                    <input type="radio" id="lowerPrice" value="option2" name="price">
+                    Menor precio
+                </label>
+            </div>
+            <div class="m-2">
+                <button type="button" class="btn btn-secondary" id="addingProducts" data-toggle="tooltip"
+                    data-placement="top" title="Cargar nuevo producto">
+                    <strong>+</strong>
+                </button>
+                <button class="btn btn-secondary " id="everybody">
+                    Productos
+                </button>
+            </div>
 
-        <div class="container d-flex ">
-            <input class="ml-5 mr-5 w-50 p-2" id="filter" type="text" placeholder="Busca tu nuevo celular!!!">
-            <button class="btn" id="search">Buscar</button>
-        </div >
-
-        <div class="container d-flex  mt-3">
-            <button class="btn ml-5 mr-5" id="higherPrice">Mayor precio</button>
-            <button class="btn mr-5" id="lowerPrice">Menor precio</button>
-            <button class="btn mr-5" id="addingProducts">Cargar nuevo producto</button>
         </div>
     </section>
 
 
-    <div class="card-columns container mt-3" id="container">
-
-
+    <div class="row mt-3 justify-content-center" id="container">
     </div>
+
+
+
+
+
 
 </body>
 
