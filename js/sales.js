@@ -142,21 +142,9 @@ function filtering() {
 //BOTONES
 
 //MAYOR PRECIO
-higher.addEventListener("click", () => {
-    if (higherPrice) {
-        container.parentNode.removeChild(div)
-        higherPrice()
-    }
-})
+higher.addEventListener("click", () => higherPrice())
 //MENOR PRECIO
-lower.addEventListener("click", () => {
-    debugger
-    if (lowerPrice) {
-        if(div.parentNode){
-        div.parentNode.removeChild(div)
-        lowerPrice()
-    }}
-})
+lower.addEventListener("click", () =>lowerPrice())
 //AGREGADO DE PRODUCTOS
 addingNewProducts.addEventListener("click", () => addingProducts())
 //MUESTRA LOS PRODUCTOS
