@@ -4,7 +4,7 @@ const everyBody = document.querySelector("#everybody")//Todos los productos
 const lower = document.querySelector("#lowerPrice")//Menor precio
 const higher = document.querySelector("#higherPrice")//Mayor precio
 const addingNewProducts = document.querySelector("#addingProducts")//Cargando productos
-const container = document.querySelector("#container")//Contenedor de cards
+const container = document.querySelector("#containerG")//Contenedor de 
 
 // VARIABLES NECESARIAS 
 
@@ -72,7 +72,7 @@ const loadProducts = (products) => {
         div.innerHTML = ` 
         <h2>${product.name}</h2>
         <h4>${product.brand}</h4>
-        <img  class="image" src="${product.image}" onerror="this.src='./assets/images/remodelacion.jpg'" alt="Hubo un error">
+        <img  class="image w-75" src="${product.image}" onerror="this.src='./assets/images/remodelacion.jpg'" alt="Hubo un error">
         <p class="price"><strong>${product.price} USD</strong></p>
         <button class="button btn " id="cart" >Agregar al carro</button>
         `
@@ -82,7 +82,7 @@ const loadProducts = (products) => {
 }
 
 
-//PARA ORDENAR LOS PRECIOS
+// PARA ORDENAR LOS PRECIOS
 function lowerPrice() {
     products.sort((a, b) => {
         if (a.price > b.price) {
@@ -108,18 +108,8 @@ function higherPrice() {
     })
 }
 
-function newList() {
-    if (higherPrice) {
-        products.value = ""
-        higherPrice()
-    } else {
-        products.value = ""
-        lowerPrice()
-    }
-}
 
-
-//MAS DE UN RESULTADO
+// MAS DE UN RESULTADO
 function searching() {
     let search = []
     let parameter = filter.value.toUpperCase()
@@ -127,7 +117,7 @@ function searching() {
     //document.write(search.push(result))
 }
 
-//BUSQUEDA EN DETALLE
+// BUSQUEDA EN DETALLE
 function filtering() {
     let nameProd = prompt("Ingrese el nombre especifico de lo que busca: ").toUpperCase()
     let result = products.find((product) => product.name.includes(nameProd))
@@ -139,13 +129,15 @@ function filtering() {
 }
 
 
-//BOTONES
+// BOTONES
 
 //MAYOR PRECIO
-higher.addEventListener("click", () => higherPrice())
+higher.addEventListener("click", () =>higherPrice())
 //MENOR PRECIO
 lower.addEventListener("click", () =>lowerPrice())
 //AGREGADO DE PRODUCTOS
 addingNewProducts.addEventListener("click", () => addingProducts())
 //MUESTRA LOS PRODUCTOS
 everyBody.addEventListener("click", () => loadProducts(products), list())
+
+
