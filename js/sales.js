@@ -77,21 +77,16 @@ const addingProducts = () => {
     products.push(newProduct)
 }
 
-//INGRESO ADMIN
+//INGRESO ADMIN / TERNARIO
 const adminLogin = () => {
     alert("Solo el administrador puede cargar un nuevo producto")
     const name = "admin"
     const password = 1234
     const nameUser = prompt("nombre")
     const passwordUser = prompt("contraseña")
+    const permitted = (nameUser === name || passwordUser === password)
     
-    
-    if (nameUser === name || passwordUser === password) {
-        addingProducts()
-        loadProducts(products)
-    } else { alert("Usuario o contraseña invalido") }
-
-
+    permitted ? (addingProducts(), loadProducts(products)) : alert("Usuario o contraseña invalido") 
 }
 
 // CARGANDO PRODUCTOS (NUEVO)
@@ -130,7 +125,7 @@ loadProducts(products)
 
 
 // PARA ORDENAR LOS PRECIOS (NUEVO)
-function optionPrice() {
+function optionPrice() {   
     products.sort((a, b) => {
         if (filteredPrice.value === "lowerPrice") {
             if (a.price > b.price)
@@ -170,7 +165,6 @@ function searching() {
                     products
                     loadProducts(search)
                 })
-
             } else {
                 alert("No se encontro el producto")
             }
@@ -181,6 +175,15 @@ function searching() {
 
 loadCart()
 
+//BUSQUEDA DE ATAJO ENTER
+
+
+function shortcut(e) {
+    if (e.key === "Enter") {
+        searching()
+    }
+}
+
 // BOTONES
 
 //OPCION DE PRECIOS
@@ -189,9 +192,4 @@ select.addEventListener("change", () => optionPrice())
 addingNewProducts.addEventListener("click", () => adminLogin())
 //BUSCADOR
 result.addEventListener("click", searching)
-filter.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        searching()
-    }
-})
-
+filter.addEventListener("keypress", () => shortcut(e) )
